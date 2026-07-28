@@ -1,0 +1,33 @@
+# --- PyInstaller build artifacts ---
+build/
+dist/
+*.spec
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+ENV/
+
+# --- Downloaded videos/audio (avoid committing test downloads) ---
+downloads/
+*.mp4
+*.mp3
+*.webm
+*.mkv
+
+# --- OS/editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Local config/secrets, if you add any later ---
+.env
