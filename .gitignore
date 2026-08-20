@@ -1,3 +1,9 @@
+# --- Downloaded/managed yt-dlp binary (fetched at runtime, don't commit) ---
+yt-dlp.exe
+yt-dlp_macos
+yt-dlp
+*.download
+
 # --- PyInstaller build artifacts ---
 build/
 dist/
