@@ -58,7 +58,7 @@ This means:
 ## Usage
 
 ```bash
-python gui_downloader.py
+python yt_downloader.py
 ```
 
 1. On first launch, the app downloads the latest `yt-dlp` binary automatically (needs internet).
@@ -75,7 +75,7 @@ python gui_downloader.py
 
 ```bash
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --icon=icon.ico --name "YouTubeDownloader" gui_downloader.py
+pyinstaller --noconfirm --onefile --windowed --icon=icon.ico --name "YouTubeDownloader" yt_downloader.py
 ```
 
 The executable will be in the `dist/` folder. `yt-dlp.exe` itself is **not** bundled by
@@ -87,7 +87,7 @@ binary next to the executable and set `ffmpeg_location` accordingly.
 
 ```
 .
-├── gui_downloader.py     # Main application
+├── yt_downloader.py      # Main application
 ├── ytdlp_manager.py      # Downloads/updates the standalone yt-dlp binary
 ├── icon.ico              # Optional window/app icon (add your own)
 ├── yt-dlp.exe            # Downloaded automatically at runtime — not committed to git
