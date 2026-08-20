@@ -36,7 +36,39 @@ This means:
   (required for merging video/audio and for MP3 extraction)
 - Internet access on first run, to download the yt-dlp binary
 
-## Installation (running from source)
+## Installation & Usage
+
+There are two ways to run this app — pick whichever fits you.
+
+### Option A: Download the prebuilt .exe (no Python needed)
+
+This is the easiest way if you just want to use the app.
+
+1. Go to the [Releases page](../../releases) and download `YouTubeDownloader.exe` from the
+   latest release.
+2. Install [ffmpeg](https://ffmpeg.org/download.html) and make sure it's on your system PATH —
+   required for merging video/audio and for MP3 extraction. (See "Requirements" above for
+   platform-specific install commands.)
+3. Double-click `YouTubeDownloader.exe` to run it. No installer, no Python required.
+4. **First launch will pause briefly** — the app downloads the latest `yt-dlp` binary
+   automatically and saves it next to the `.exe`. This needs an internet connection; after
+   that first download, `yt-dlp` stays on disk and doesn't need to re-download unless you
+   click "Check for updates."
+5. Paste one or more video/playlist URLs into the text box (one per line).
+6. Optionally click **Preview first URL** to confirm the title/thumbnail before downloading.
+7. Pick a quality, or check **Audio only (MP3)**.
+8. Leave **"Single video only"** checked unless you actually want to download a full playlist —
+   this avoids accidentally pulling in an entire auto-generated YouTube "Mix".
+9. Choose a save folder (defaults to your `Downloads` folder).
+10. Click **Download** and watch progress per item in the queue list below.
+11. If downloads start failing, click **Check for updates** to fetch the latest yt-dlp.
+
+> **Note:** Windows may show a "Windows protected your PC" SmartScreen warning the first time,
+> since the .exe isn't code-signed. Click **More info → Run anyway** to proceed.
+
+### Option B: Run from source
+
+Use this if you want to modify the code or aren't on Windows.
 
 1. Clone or download this project.
 2. (Optional but recommended) Create a virtual environment:
@@ -50,26 +82,12 @@ This means:
    ```
    Note: the `yt-dlp` Python package is **not** required — the app downloads and runs the
    standalone `yt-dlp` binary itself.
-4. Install ffmpeg:
-   - **Mac:** `brew install ffmpeg`
-   - **Ubuntu/Debian:** `sudo apt install ffmpeg`
-   - **Windows:** download a build from ffmpeg.org and add its `bin` folder to your PATH
-
-## Usage
-
-```bash
-python yt_downloader.py
-```
-
-1. On first launch, the app downloads the latest `yt-dlp` binary automatically (needs internet).
-2. Paste one or more video/playlist URLs into the text box (one per line).
-3. Optionally click **Preview first URL** to confirm the title/thumbnail before downloading.
-4. Pick a quality, or check **Audio only (MP3)**.
-5. Leave **"Single video only"** checked unless you actually want to download a full playlist —
-   this avoids accidentally pulling in an entire auto-generated YouTube "Mix".
-6. Choose a save folder (defaults to your `Downloads` folder).
-7. Click **Download** and watch progress per item in the queue list below.
-8. If downloads start failing, click **Check for updates** to fetch the latest yt-dlp.
+4. Install ffmpeg (see "Requirements" above).
+5. Run it:
+   ```bash
+   python yt_downloader.py
+   ```
+   Usage from here is identical to steps 4–11 in Option A above.
 
 ## Packaging as a standalone app
 
